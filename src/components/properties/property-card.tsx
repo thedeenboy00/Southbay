@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Property, PropertyStatus } from "@/types/property";
-import { PROPERTY_TYPE_LABELS, STATUS_LABELS, cn, formatPrice } from "@/lib/utils";
+import { LISTING_LABELS, PROPERTY_TYPE_LABELS, STATUS_LABELS, cn, formatPrice } from "@/lib/utils";
 
 interface PropertyCardProps {
   property: Property;
@@ -43,7 +43,7 @@ export function PropertyCard({ property, priority = false }: PropertyCardProps) 
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-ink/35 to-transparent" aria-hidden="true" />
         <div className="absolute left-3 top-3 flex gap-2">
           <span className="rounded-sm bg-brand px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wider text-white">
-            {property.listingType === "sale" ? "For sale" : "To rent"}
+            {LISTING_LABELS[property.listingType]}
           </span>
           <span className={cn("rounded-sm px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-wider", STATUS_STYLES[property.status])}>
             {STATUS_LABELS[property.status]}
@@ -61,13 +61,16 @@ export function PropertyCard({ property, priority = false }: PropertyCardProps) 
           {property.location.suburb}, {property.location.city}
         </p>
         <p className="mt-4 text-xl font-semibold text-brand">{formatPrice(property.price, property.currency)}</p>
-        {specs.length > 0 ? (
-          <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 border-t border-line pt-4 text-sm text-body">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-4 text-sm">
+          <ul className="flex flex-wrap gap-x-4 gap-y-1 text-body">
             {specs.map((spec) => (
               <li key={spec}>{spec}</li>
             ))}
           </ul>
-        ) : null}
+          <span aria-hidden="true" className="font-semibold text-brand">
+            View property <span className="inline-block transition-transform group-hover:translate-x-0.5 motion-reduce:transition-none">→</span>
+          </span>
+        </div>
       </div>
     </article>
   );

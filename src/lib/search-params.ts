@@ -15,8 +15,8 @@ export const DEFAULT_SORT: SortOption = "newest";
 
 export const SORT_LABELS: Record<SortOption, string> = {
   newest: "Newest",
-  "price-asc": "Price: Low to High",
-  "price-desc": "Price: High to Low",
+  "price-asc": "Price: low to high",
+  "price-desc": "Price: high to low",
 };
 
 export function isPropertyType(value: string): value is PropertyType {

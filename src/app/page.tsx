@@ -22,7 +22,7 @@ interface Principle {
 }
 
 const PRINCIPLES: readonly Principle[] = [
-  { title: "Explore with confidence", body: "Clear listings, consistent presentation and honest status labels, so comparing properties feels straightforward." },
+  { title: "Explore with confidence", body: "Clear property pages, consistent presentation and honest status labels, so comparing properties feels straightforward." },
   { title: "Understand the property", body: "The details that matter, size, rooms, features and location, are surfaced first and laid out for quick scanning." },
   { title: "Enquire without friction", body: "A short path from interest to conversation, with the right agent and the right property already in context." },
 ];
@@ -46,9 +46,9 @@ export default function HomePage() {
               Explore homes, land and commercial property in one clear, considered place, from first search to first viewing.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/properties">Explore Properties</ButtonLink>
+              <ButtonLink href="/properties">Explore properties</ButtonLink>
               <ButtonLink href="#browse" variant="secondary">
-                Browse by Type
+                View property types
               </ButtonLink>
             </div>
           </div>
@@ -69,8 +69,8 @@ export default function HomePage() {
       <section aria-labelledby="featured-heading" className="section pt-8 lg:pt-12">
         <Container>
           <div className="reveal">
-            <SectionHeading id="featured-heading" eyebrow="Featured" title="Selected demo properties" action={<ButtonLink href="/properties" variant="secondary">View all properties</ButtonLink>}>
-              A small, fictional selection showing how listings could be presented.
+            <SectionHeading id="featured-heading" eyebrow="Featured" title="Selected properties" action={<ButtonLink href="/properties" variant="secondary">View all properties</ButtonLink>}>
+              A fictional demo selection showing how properties are presented.
             </SectionHeading>
             <PropertyGrid properties={featured} />
           </div>
@@ -81,7 +81,7 @@ export default function HomePage() {
         <Container>
           <div className="reveal">
             <SectionHeading id="browse-heading" eyebrow="Browse" title="Start with the kind of property">
-              Each type opens the demo collection filtered to that type.
+              Each type opens the collection filtered to that type.
             </SectionHeading>
             <PropertyTypeTiles properties={properties} />
           </div>
@@ -121,12 +121,12 @@ export default function HomePage() {
       <section id="contact" aria-labelledby="cta-heading" className="section on-dark bg-brand">
         <Container>
           <div className="reveal">
-            <SectionHeading id="cta-heading" eyebrow="Contact (concept)" title="Ready to explore your next property?" inverse>
-              This is a concept. There is no contact form or viewing request yet, and nothing on this site is sent to Southbay or DeenTech.
+            <SectionHeading id="cta-heading" eyebrow="Enquiries" title="Ready to explore your next property?" inverse>
+              Open any property to try the enquiry preview. This is a concept: nothing on this site is sent to Southbay or DeenTech, or stored.
             </SectionHeading>
             <div className="flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={propertiesHref()} variant="inverse">
-                Explore Properties
+                Explore properties
               </ButtonLink>
             </div>
           </div>

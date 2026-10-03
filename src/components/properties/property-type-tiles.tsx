@@ -28,7 +28,7 @@ export function PropertyTypeTiles({ properties }: PropertyTypeTilesProps) {
               className={`group flex min-h-28 flex-col justify-between rounded-card p-4 sm:min-h-40 sm:p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-lift motion-reduce:hover:translate-y-0 lg:min-h-56 ${TONES[type]}`}
             >
               <span className="text-xs font-semibold uppercase tracking-widest">
-                {count} demo {count === 1 ? "listing" : "listings"}
+                {count} {count === 1 ? "property" : "properties"}
               </span>
               <span className="flex items-end justify-between gap-2">
                 <span className="display min-w-0 text-xl sm:text-2xl">{PROPERTY_TYPE_LABELS[type]}</span>

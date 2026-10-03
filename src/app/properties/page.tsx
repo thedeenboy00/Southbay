@@ -30,7 +30,7 @@ export default async function PropertiesPage({ searchParams }: PropertiesPagePro
     <Container className="py-10 sm:py-12">
       <p className="eyebrow">Demo collection</p>
       <h1 className="display mt-3 text-4xl sm:text-5xl">Properties</h1>
-      <p className="mt-4 mb-8 max-w-2xl text-body">Search a fictional demo collection. The URL holds your filters, so any search can be shared or refreshed.</p>
+      <p className="mt-4 mb-8 max-w-2xl text-body">Search by location, property type, or buy or rent. Your filters stay in the page address, so any search can be shared.</p>
 
       <FilterDisclosure key={stateKey} activeCount={activeFilters.length}>
         <PropertySearch query={query} submitLabel="Apply filters" />
@@ -47,7 +47,7 @@ export default async function PropertiesPage({ searchParams }: PropertiesPagePro
       <div className="mt-8">
         {results.length > 0 ? (
           <>
-            <h2 className="sr-only">Property listings</h2>
+            <h2 className="sr-only">Search results</h2>
             <PropertyGrid properties={results} />
           </>
         ) : (

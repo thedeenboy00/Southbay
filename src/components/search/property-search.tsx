@@ -47,9 +47,9 @@ export function PropertySearch({ query = {}, submitLabel, className }: PropertyS
             Buy or rent
           </label>
           <select id="search-listing" name={PROPERTY_QUERY_KEYS.listing} defaultValue={query.listing ?? ""} className={fieldClass}>
-            <option value="">Buy or rent</option>
-            <option value="sale">Buy ({LISTING_LABELS.sale.toLowerCase()})</option>
-            <option value="rent">Rent ({LISTING_LABELS.rent.toLowerCase()})</option>
+            <option value="">Any</option>
+            <option value="sale">{LISTING_LABELS.sale}</option>
+            <option value="rent">{LISTING_LABELS.rent}</option>
           </select>
         </div>
         <button type="submit" className="min-h-12 rounded-sm bg-brand px-8 text-sm font-semibold text-white transition hover:bg-brand-hover active:translate-y-px md:col-span-2 lg:col-span-1">

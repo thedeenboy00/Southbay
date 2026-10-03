@@ -4,8 +4,8 @@ export const ENQUIRY_TYPES = ["viewing", "ask"] as const;
 export type EnquiryType = (typeof ENQUIRY_TYPES)[number];
 
 export const ENQUIRY_TYPE_LABELS: Record<EnquiryType, string> = {
-  viewing: "Request a Viewing",
-  ask: "Ask About Property",
+  viewing: "Request a viewing",
+  ask: "Ask about this property",
 };
 
 /** Window event used by action links to pre-select the enquiry type before scrolling to the form. */

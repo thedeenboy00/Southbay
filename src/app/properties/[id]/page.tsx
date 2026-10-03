@@ -144,7 +144,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             <h2 id="enquiry-heading" className="display mt-3 text-3xl sm:text-4xl">
               {actions.enquiryTypes.length > 1 ? "Request a viewing or ask a question" : "Ask about this property"}
             </h2>
-            <p className="mt-4 text-body">This is a concept form. It checks your entries and shows a preview, but nothing is sent to Southbay, DeenTech or any agent, and nothing is stored.</p>
+            <p className="mt-4 text-body">Complete the form to preview how an enquiry would work. This is a concept: nothing is sent to Southbay, DeenTech or any agent, and nothing is stored.</p>
           </div>
           <ConceptEnquiryForm propertyTitle={property.title} enquiryTypes={actions.enquiryTypes} defaultType={actions.primary.type} />
         </Container>
@@ -156,7 +156,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             <p className="eyebrow">Keep exploring</p>
             <h2 id="related-heading" className="display mt-3 mb-8 text-3xl sm:text-4xl">Related properties</h2>
             <PropertyGrid properties={related} />
-            <p className="mt-10 text-xs text-muted">Demo listing. The property, agent and all details are fictional.</p>
+            <p className="mt-10 text-xs text-muted">Demo content: the property, agent and all details are fictional.</p>
           </div>
         </Container>
       </section>

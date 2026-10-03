@@ -19,7 +19,7 @@ export function LocationPanel({ location }: LocationPanelProps) {
         style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent 0 39px, #e2ded6 39px 40px), repeating-linear-gradient(90deg, transparent 0 39px, #e2ded6 39px 40px)" }}
       >
         <span className="h-4 w-4 rounded-full border-2 border-white bg-brand shadow-card" />
-        <span className="absolute bottom-3 left-3 rounded-sm bg-surface px-2.5 py-1 text-xs font-medium text-muted">Map concept</span>
+        <span className="absolute bottom-3 left-3 rounded-sm bg-surface px-2.5 py-1 text-xs font-medium text-muted">Map view (concept)</span>
       </div>
       <div className="p-5 sm:p-6">
         <dl>
@@ -30,7 +30,7 @@ export function LocationPanel({ location }: LocationPanelProps) {
             </div>
           ))}
         </dl>
-        <p className="mt-4 text-xs text-muted">A real map is not part of this concept. The panel only suggests where one could sit.</p>
+        <p className="mt-4 text-xs text-muted">A map view would sit here in a full build.</p>
       </div>
     </div>
   );

@@ -20,14 +20,11 @@ export function getKeySpecs(property: Property): LabelledValue[] {
 
 export function getPropertyFacts(property: Property): LabelledValue[] {
   const facts: LabelledValue[] = [
-    { label: "Property ID", value: property.id },
     { label: "Property type", value: PROPERTY_TYPE_LABELS[property.propertyType] },
     { label: "Listing type", value: LISTING_LABELS[property.listingType] },
     { label: "Status", value: STATUS_LABELS[property.status] },
     { label: "Listed", value: formatDate(property.listedDate) },
   ];
-  if (property.buildingSize !== null) facts.push({ label: "Building size", value: `${property.buildingSize} m²` });
-  if (property.landSize > 0) facts.push({ label: "Land size", value: `${property.landSize} m²` });
   return facts;
 }
 

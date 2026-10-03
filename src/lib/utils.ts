@@ -27,7 +27,7 @@ export const PROPERTY_TYPE_LABELS: Record<PropertyType, string> = {
 
 export const LISTING_LABELS: Record<ListingType, string> = {
   sale: "For sale",
-  rent: "To rent",
+  rent: "For rent",
 };
 
 export const STATUS_LABELS: Record<PropertyStatus, string> = {

@@ -15,4 +15,4 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { href: "/#contact", label: "Contact" },
 ];
 
-export const VIEWING_CTA: NavItem = { href: "/#contact", label: "Request a Viewing" };
+export const VIEWING_CTA: NavItem = { href: "/#contact", label: "Request a viewing" };

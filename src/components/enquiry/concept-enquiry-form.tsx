@@ -172,7 +172,7 @@ export function ConceptEnquiryForm({ propertyTitle, enquiryTypes, defaultType }:
         <button type="submit" className="inline-flex min-h-12 items-center justify-center rounded-sm bg-brand px-8 text-sm font-semibold text-white transition hover:bg-brand-hover active:translate-y-px">
           Preview enquiry
         </button>
-        <p className="text-xs text-muted">Concept only: nothing is sent or stored.</p>
+        <p className="text-xs text-muted">Demo only. Nothing is sent or stored.</p>
       </div>
     </form>
   );

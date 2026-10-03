@@ -37,9 +37,9 @@ export default function DashboardPage() {
     <Container className="space-y-14 py-10 sm:py-14">
       <header>
         <p className="eyebrow">Concept dashboard · Demo data</p>
-        <h1 className="display mt-3 text-4xl sm:text-5xl">Property Intelligence</h1>
+        <h1 className="display mt-3 text-4xl sm:text-5xl">Property intelligence</h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed sm:text-lg">A clear view of portfolio activity, enquiries and property performance.</p>
-        <p className="mt-4 inline-block rounded-sm border border-line bg-surface px-3 py-1.5 text-xs font-medium text-muted">Sample activity · Demo environment</p>
+        <p className="mt-4 max-w-2xl text-sm text-muted">Illustrative sample data for this concept. These figures are not Southbay analytics.</p>
       </header>
 
       <section aria-labelledby="kpi-heading" className="reveal">
@@ -51,13 +51,13 @@ export default function DashboardPage() {
         <DashboardSection id="inventory-heading" eyebrow="Portfolio" title="Property inventory" description={properties.length === 0 ? "No properties in the demo collection." : `${properties.length} ${properties.length === 1 ? "property" : "properties"} in the demo collection, by type.`}>
           <BarList items={countByType(properties)} />
         </DashboardSection>
-        <DashboardSection id="activity-heading" eyebrow="Activity" title="Activity overview" description={`Demo activity trend${period ? `, ${period}` : ""}. Listings come from the demo properties; enquiries and viewing requests are sample records.`}>
+        <DashboardSection id="activity-heading" eyebrow="Activity" title="Activity overview" description={`${period ? `${period}. ` : ""}Listings follow the demo properties; enquiries and viewing requests are sample records.`}>
           <ActivityChart series={series} />
         </DashboardSection>
       </div>
 
       <div className="reveal grid gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
-        <DashboardSection id="enquiries-heading" eyebrow="Enquiries" title="Enquiries and viewings" description={period ? `Sample enquiries, ${period}.` : "Sample enquiries."}>
+        <DashboardSection id="enquiries-heading" eyebrow="Enquiries" title="Enquiries and viewing requests" description={period ? `Sample enquiries, ${period}.` : "Sample enquiries."}>
           <dl className="grid grid-cols-3 gap-4 border-b border-line pb-6">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wider text-muted">Enquiries</dt>
@@ -84,7 +84,7 @@ export default function DashboardPage() {
         <DashboardSection id="recent-enquiries-heading" eyebrow="Enquiries" title="Recent enquiries" description="Fictional names and sample records only. Nothing here is sent or stored.">
           <RecentEnquiries rows={buildRecentEnquiries(enquiries, properties)} />
         </DashboardSection>
-        <DashboardSection id="recent-activity-heading" eyebrow="Properties" title="Recent property activity" description="Listings and viewing requests are derived from the demo data; status and listing updates are samples.">
+        <DashboardSection id="recent-activity-heading" eyebrow="Properties" title="Recent activity" description="Drawn from the demo properties and sample records.">
           <ActivityFeed items={buildActivityFeed(properties, enquiries, getDashboardPropertyUpdates())} />
         </DashboardSection>
       </div>
