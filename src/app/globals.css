@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-canvas: #f8f6f2;
+  --color-surface: #ffffff;
+  --color-sunken: #efece6;
+  --color-ink: #14212b;
+  --color-body: #3d4a55;
+  --color-muted: #5f6b75;
+  --color-line: #e2ded6;
+  --color-brand: #1b3446;
+  --color-brand-hover: #12263a;
+  --color-slate: #566a79;
+  --color-accent: #7d5f34;
+  --color-accent-soft: #c9ac7c;
+  --color-success: #2f6b4f;
+  --color-warning: #8a5a14;
+  --color-danger: #a12f2f;
+  --radius-card: 4px;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+  --shadow-card: 0 1px 2px rgb(20 33 43 / 0.05);
+  --shadow-lift: 0 2px 4px rgb(20 33 43 / 0.06), 0 16px 32px rgb(20 33 43 / 0.08);
+}
+
+@layer base {
+  html { background: var(--color-canvas); color: var(--color-body); scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { font-family: var(--font-sans), system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3 { color: var(--color-ink); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+  .on-dark :focus-visible { outline-color: #ffffff; }
+}
+
+@layer components {
+  .chart-label { font-size: 22px; }
+  @media (min-width: 30.0625rem) { .chart-label { font-size: 15px; } }
+  @media (min-width: 40rem) { .chart-label { font-size: 12px; } }
+  .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); }
+  .display { font-family: var(--font-fraunces), Georgia, serif; font-weight: 500; letter-spacing: -0.01em; line-height: 1.1; }
+  .section { padding-block: 4rem; }
+  @media (min-width: 1024px) { .section { padding-block: 6rem; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Progressive enhancement: content is visible by default. Where scroll-driven animations are
+   supported and motion is allowed, blocks fade up as they enter the viewport. No JavaScript involved. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 15%;
+    }
+    @keyframes reveal-rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in { animation: fade-in 0.35s ease-out both; }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* No JavaScript: the mobile filter toggle cannot work, so show the filter form and hide the toggles. */
+@media (scripting: none) {
+  .filter-toggle { display: none; }
+  .filter-panel { display: block; }
+}
